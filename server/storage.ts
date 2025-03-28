@@ -11,8 +11,8 @@ import {
   import connectPg from "connect-pg-simple";
   import { db } from "./db";
   import { eq, and, desc } from "drizzle-orm";
-  import { Pool } from "@neondatabase/serverless";
-  
+  // import pg from 'pg';
+  // const { Pool } = pg;  
   const MemoryStore = createMemoryStore(session);
   const PostgresSessionStore = connectPg(session);
   
@@ -538,14 +538,20 @@ import {
     }
   }
   
+  import pg from 'pg';
+  const { Pool } = pg;
+
   // Database Storage implementation
   export class DatabaseStorage implements IStorage {
     sessionStore: session.Store;
-    
+
+    private pool: pg.Pool;
+
     constructor() {
+      this.pool = new Pool();
       // Create PostgreSQL session store
       this.sessionStore = new PostgresSessionStore({
-        pool: new Pool({ connectionString: process.env.DATABASE_URL }),
+        pool: this.pool,
         createTableIfMissing: true,
       });
     }

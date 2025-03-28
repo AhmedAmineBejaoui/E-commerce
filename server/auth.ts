@@ -5,12 +5,17 @@ import session from "express-session";
 import bcrypt from "bcrypt";
 import { storage } from "./storage";
 import { User as SelectUser } from "@shared/schema";
+import connectPgSimple from "connect-pg-simple";
+import { pool } from "./db";
 
 declare global {
   namespace Express {
     interface User extends SelectUser {}
   }
 }
+
+
+
 
 export async function hashPassword(password: string) {
   const saltRounds = 10;
