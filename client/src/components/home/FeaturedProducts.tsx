@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
-import { Product } from "@shared/schema";
+import { Product } from "server/src/schema";
 import { Skeleton } from "@/components/ui/skeleton";
 import ProductCard from "../product/ProductCard";
 

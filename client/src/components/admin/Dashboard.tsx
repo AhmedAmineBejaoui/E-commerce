@@ -15,7 +15,7 @@ import {
   ShoppingBag, 
   Package 
 } from "lucide-react";
-import { Order, Product, User } from "@shared/schema";
+import { Order, Product, User } from "server/src/schema";
 
 export default function Dashboard() {
   // Fetch latest orders

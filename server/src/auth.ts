@@ -4,7 +4,7 @@ import { Express } from "express";
 import session from "express-session";
 import bcrypt from "bcrypt";
 import { storage } from "./storage";
-import { User as SelectUser } from "@shared/schema";
+import { User as SelectUser } from "server/src/schema";
 import connectPgSimple from "connect-pg-simple";
 import { pool } from "./db";
 

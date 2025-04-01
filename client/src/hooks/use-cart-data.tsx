@@ -2,7 +2,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { useAuth } from "./use-auth";
 import { useToast } from "./use-toast";
 import { apiRequest, queryClient } from "@/lib/queryClient";
-import { CartItemWithProduct } from "@shared/schema";
+import { CartItemWithProduct } from "server/src/schema";
 
 export function useCartData() {
   const { user } = useAuth();

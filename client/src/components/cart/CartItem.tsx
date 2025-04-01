@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CartItemWithProduct } from "@shared/schema";
+import { CartItemWithProduct } from "server/src/schema";
 import { useCartContext } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
 import { MinusIcon, PlusIcon, Trash2Icon } from "lucide-react";

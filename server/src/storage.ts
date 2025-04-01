@@ -5,7 +5,7 @@ import {
     orders, type Order, type InsertOrder,
     orderItems, type OrderItem, type InsertOrderItem,
     cartItems, type CartItem, type InsertCartItem
-  } from "@shared/schema";
+  } from "server/src/schema";
   import session from "express-session";
   import createMemoryStore from "memorystore";
   import connectPg from "connect-pg-simple";
@@ -545,17 +545,28 @@ import {
   export class DatabaseStorage implements IStorage {
     sessionStore: session.Store;
 
-    private pool: pg.Pool;
 
     constructor() {
-      this.pool = new Pool();
-      // Create PostgreSQL session store
+      // Utiliser le pool existant au lieu d'en créer un nouveau
       this.sessionStore = new PostgresSessionStore({
-        pool: this.pool,
+        pool: new pg.Pool(), // Utiliser une instance de Pool
         createTableIfMissing: true,
       });
     }
     
+// Ajouter une méthode d'initialisation
+async initialize() {
+  try {
+    // Tester la connexion
+    const pool = new Pool(); // Create an instance of Pool
+    const client = await pool.connect();
+    console.log('✅ Connexion PostgreSQL réussie!');
+    client.release();
+  } catch (error) {
+    console.error('❌ ERREUR FATALE :', error);
+    process.exit(1);
+  }
+}
     // User management
     async getUser(id: number): Promise<User | undefined> {
       const result = await db.select().from(users).where(eq(users.id, id));
@@ -754,6 +765,9 @@ import {
     // Initialize database with seed data
     async seedDatabase() {
       try {
+        const pool = new pg.Pool();
+        await pool.query('SELECT 1');
+
         // Check if we already have users
         const existingUsers = await db.select().from(users);
         if (existingUsers.length > 0) {
@@ -763,6 +777,73 @@ import {
         
         console.log("Seeding database...");
         
+        await pool.query(`
+          CREATE TABLE users (
+            id SERIAL PRIMARY KEY,
+            username VARCHAR(255) UNIQUE NOT NULL,
+            password VARCHAR(255) NOT NULL,
+            email VARCHAR(255) UNIQUE NOT NULL,
+            "firstName" VARCHAR(255),
+            "lastName" VARCHAR(255),
+            address TEXT,
+            city VARCHAR(255),
+            "postalCode" VARCHAR(20),
+            phone VARCHAR(20),
+            "isAdmin" BOOLEAN DEFAULT false,
+            "createdAt" TIMESTAMP DEFAULT NOW()
+          );
+  
+          CREATE TABLE categories (
+            id SERIAL PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            slug VARCHAR(255) UNIQUE NOT NULL,
+            description TEXT,
+            "imageUrl" VARCHAR(255)
+          );
+  
+          CREATE TABLE products (
+            id SERIAL PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            slug VARCHAR(255) UNIQUE NOT NULL,
+            price DECIMAL(10,2) NOT NULL,
+            "discountPrice" DECIMAL(10,2),
+            stock INT NOT NULL,
+            "categoryId" INT REFERENCES categories(id),
+            featured BOOLEAN DEFAULT false,
+            "isNew" BOOLEAN DEFAULT true,
+            description TEXT,
+            "imageUrl" VARCHAR(255),
+            rating DECIMAL(2,1),
+            "numReviews" INT,
+            "createdAt" TIMESTAMP DEFAULT NOW()
+          );
+  
+          CREATE TABLE orders (
+            id SERIAL PRIMARY KEY,
+            "userId" INT REFERENCES users(id),
+            "totalAmount" DECIMAL(10,2) NOT NULL,
+            status VARCHAR(50) NOT NULL,
+            "createdAt" TIMESTAMP DEFAULT NOW(),
+            "shippingAddress" TEXT,
+            "paymentMethod" VARCHAR(255)
+          );
+  
+          CREATE TABLE "orderItems" (
+            id SERIAL PRIMARY KEY,
+            "orderId" INT REFERENCES orders(id),
+            "productId" INT REFERENCES products(id),
+            quantity INT NOT NULL,
+            "unitPrice" DECIMAL(10,2) NOT NULL
+          );
+  
+          CREATE TABLE "cartItems" (
+            id SERIAL PRIMARY KEY,
+            "userId" INT REFERENCES users(id),
+            "productId" INT REFERENCES products(id),
+            quantity INT NOT NULL
+          );
+        `);
+
         // Create admin user
         const adminUser: InsertUser = {
           username: "admin",

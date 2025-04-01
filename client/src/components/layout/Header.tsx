@@ -12,7 +12,7 @@ import {
   X 
 } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { Category } from "@shared/schema";
+import { Category } from "server/src/schema";
 
 export default function Header() {
   const [location] = useLocation();

@@ -5,7 +5,7 @@ import { z } from "zod";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { Category, insertProductSchema, Product } from "@shared/schema";
+import { Category, insertProductSchema, Product } from "server/src/schema";
 import {
   Form,
   FormControl,

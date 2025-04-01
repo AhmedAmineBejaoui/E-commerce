@@ -1,5 +1,5 @@
 import React, { createContext, useContext, ReactNode } from 'react';
-import { CartItemWithProduct } from '@shared/schema';
+import { CartItemWithProduct } from 'server/src/schema';
 import { useCartData } from '@/hooks/use-cart-data';
 
 interface CartContextType {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'wouter';
-import { Product } from '@shared/schema';
+import { Product } from 'server/src/schema';
 import { Heart, ShoppingCart, Star, StarHalf } from 'lucide-react';
 import { useCartContext } from '@/context/CartContext';
 import { useAuth } from '@/hooks/use-auth';
