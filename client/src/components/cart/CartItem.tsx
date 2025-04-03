@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { CartItemWithProduct } from "server/src/schema";
-import { useCartContext } from "@/context/CartContext";
-import { Button } from "@/components/ui/button";
+import { CartItemWithProduct } from "shared/src/schema.ts";
+import { useCartContext } from "../../context/CartContext";
+import { Button } from "../../components/ui/button";
 import { MinusIcon, PlusIcon, Trash2Icon } from "lucide-react";
 import { Link } from "wouter";
 

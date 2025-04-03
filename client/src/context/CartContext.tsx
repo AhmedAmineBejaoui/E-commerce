@@ -1,6 +1,6 @@
 import React, { createContext, useContext, ReactNode } from 'react';
-import { CartItemWithProduct } from 'server/src/schema';
-import { useCartData } from '@/hooks/use-cart-data';
+import { CartItemWithProduct } from 'shared/src/schema.ts';
+import { useCartData } from '../hooks/use-cart-data';
 
 interface CartContextType {
   cartItems: CartItemWithProduct[];

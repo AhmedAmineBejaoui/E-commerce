@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { useAuth } from "@/hooks/use-auth";
-import { useCartContext } from "@/context/CartContext";
-import { Button } from "@/components/ui/button";
+import { useAuth } from "../../hooks/use-auth";
+import { useCartContext } from "../../context/CartContext";
+import { Button } from "../../components/ui/button";
 import { 
   ShoppingBag, 
   User, 
@@ -12,7 +12,7 @@ import {
   X 
 } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { Category } from "server/src/schema";
+import { Category } from "shared/src/schema";
 
 export default function Header() {
   const [location] = useLocation();
@@ -86,7 +86,7 @@ export default function Header() {
                       cartItems.map((item) => (
                         <div key={item.id} className="flex items-center p-2 hover:bg-gray-50 rounded-lg">
                           <img 
-                            src={item.product.imageUrl ?? ''} 
+                            src={item.product.imageUrl || "/placeholder-product.jpg"} 
                             alt={item.product.name} 
                             className="w-16 h-16 object-cover rounded-md mr-3"
                           />

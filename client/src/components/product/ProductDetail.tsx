@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Product } from "server/src/schema";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Button } from "@/components/ui/button";
+import { Product } from "shared/src/schema";
+import { Skeleton } from "../../components/ui/skeleton";
+import { Button } from "../../components/ui/button";
+import DOMPurify from 'dompurify';
 import { 
   HeartIcon, 
   ShoppingCartIcon, 
@@ -14,10 +15,10 @@ import {
   MinusIcon, 
   PlusIcon 
 } from "lucide-react";
-import { useCartContext } from "@/context/CartContext";
-import { useAuth } from "@/hooks/use-auth";
-import { useToast } from "@/hooks/use-toast";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useCartContext } from "../../context/CartContext";
+import { useAuth } from "../../hooks/use-auth";
+import { useToast } from "../../hooks/use-toast";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
 import { Link } from "wouter";
 
 interface ProductDetailProps {
@@ -154,7 +155,7 @@ export default function ProductDetail({ slug }: ProductDetailProps) {
         <div className="md:w-1/2">
           <div className="bg-white rounded-lg overflow-hidden shadow-md">
             <img
-              src={product.imageUrl || ""}
+              src={product.imageUrl ||""}
               alt={product.name}
               className="w-full h-auto object-cover"
             />
@@ -167,7 +168,7 @@ export default function ProductDetail({ slug }: ProductDetailProps) {
           
           <div className="flex items-center gap-2 mb-4">
             <div className="flex">
-              {renderRatingStars(product.rating ?? 0)}
+              {product.rating !== null ? renderRatingStars(product.rating) : null}
             </div>
             <span className="text-gray-500">({product.numReviews} avis)</span>
           </div>
@@ -350,9 +351,9 @@ export default function ProductDetail({ slug }: ProductDetailProps) {
               
               <div className="flex items-center">
                 <div className="flex items-center mr-4">
-                  {renderRatingStars(product.rating ?? 0)}
+                  {product.rating !== null ? renderRatingStars(product.rating) : null}
                 </div>
-                <span className="text-gray-700 font-medium">{(product.rating ?? 0).toFixed(1)} sur 5</span>
+                <span className="text-gray-700 font-medium">{product.rating !== null ? product.rating.toFixed(1) : "N/A"} sur 5</span>
               </div>
               
               <div className="space-y-4">
@@ -406,7 +407,7 @@ export default function ProductDetail({ slug }: ProductDetailProps) {
                   <a>
                     <div className="relative">
                       <img
-                        src={relatedProduct.imageUrl ?? 'default-image-url.jpg'}
+                        src={relatedProduct.imageUrl ||""}
                         alt={relatedProduct.name}
                         className="w-full h-48 object-cover"
                       />

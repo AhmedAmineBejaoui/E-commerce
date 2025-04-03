@@ -1,24 +1,32 @@
+
 {
-    "include": ["client/src/**/*", "server/src/**/*", "server/**/*"],
-    "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
-    "compilerOptions": {
-      "incremental": true,
-      "tsBuildInfoFile": "./node_modules/typescript/tsbuildinfo",
-      "noEmit": true,
-      "module": "ESNext",
-      "strict": true,
-      "lib": ["esnext", "dom", "dom.iterable"],
-      "jsx": "preserve",
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "allowImportingTsExtensions": true,
-      "moduleResolution": "node",
-      "baseUrl": ".",
-      "types": ["node", "vite/client"],
-      "paths": {
-        "@/*": ["./client/src/*"],
-        "@shared/*": ["server/src/*"]
-      }
+  "include": [
+    "client/src/**/*",
+    "server/src/**/*",
+    "server/**/*",
+    "shared/src/schema.ts"
+  ],
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "rootDir": ".",
+    "outDir": "server/dist",
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/typescript/tsbuildinfo",
+    "noEmit": true,
+    "strict": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@shared/*": ["../shared/src/*"]
     }
   }
-  
+}

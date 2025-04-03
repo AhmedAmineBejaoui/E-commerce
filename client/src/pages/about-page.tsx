@@ -1,4 +1,4 @@
-import MainLayout from "@/components/layout/MainLayout";
+import MainLayout from "../components/layout/MainLayout";
 import { CheckCircle, Award, Package, ShieldCheck, Truck, Users } from "lucide-react";
 
 export default function AboutPage() {

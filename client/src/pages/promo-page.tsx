@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { Product } from "server/src/schema";
-import MainLayout from "@/components/layout/MainLayout";
+import { Product } from "shared/src/schema.ts";
+import MainLayout from "..//components/layout/MainLayout";
 import { Loader2 } from "lucide-react";
 import { Link } from "wouter";
 

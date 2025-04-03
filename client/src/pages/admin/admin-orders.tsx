@@ -1,5 +1,5 @@
-import AdminSidebar from "@/components/admin/AdminSidebar";
-import OrdersList from "@/components/admin/OrdersList";
+import AdminSidebar from "../../components/admin/AdminSidebar";
+import OrdersList from   "../../components/admin/OrdersList";
 
 export default function AdminOrdersPage() {
   return (

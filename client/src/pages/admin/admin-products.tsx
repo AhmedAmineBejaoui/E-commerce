@@ -1,5 +1,5 @@
-import AdminSidebar from "@/components/admin/AdminSidebar";
-import ProductsList from "@/components/admin/ProductsList";
+import AdminSidebar from "../../components/admin/AdminSidebar";
+import ProductsList from "../../components/admin/ProductsList";
 
 export default function AdminProductsPage() {
   return (

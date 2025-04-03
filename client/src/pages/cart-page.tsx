@@ -1,7 +1,7 @@
-import { useCartContext } from "@/context/CartContext";
-import CartItem from "@/components/cart/CartItem";
-import CartSummary from "@/components/cart/CartSummary";
-import { Button } from "@/components/ui/button";
+import { useCartContext } from "../context/CartContext";
+import CartItem from           "../components/cart/CartItem";
+import CartSummary from        "../components/cart/CartSummary";
+import { Button } from         "../components/ui/button";
 import { Link } from "wouter";
 import { ShoppingCart, PackageOpen } from "lucide-react";
 

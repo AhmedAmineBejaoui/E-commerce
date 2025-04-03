@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
-import { Product } from "server/src/schema";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Product } from "shared/src/schema.ts";
+import { Skeleton } from "../../components/ui/skeleton";
 import { Star, StarHalf } from "lucide-react";
 
 export default function NewArrivals() {
@@ -86,7 +86,7 @@ export default function NewArrivals() {
               <div className="flex flex-col md:flex-row">
                 <div className="relative md:w-1/3">
                   <img 
-                    src={product.imageUrl ?? '/default-image.jpg'} 
+                    src={product.imageUrl || ""} 
                     alt={product.name} 
                     className="w-full h-48 md:h-full object-cover"
                   />

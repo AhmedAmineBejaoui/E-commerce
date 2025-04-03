@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { Product } from 'server/src/schema';
+import { Product } from 'shared/src/schema';
 import ProductCard from './ProductCard';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Skeleton } from '../../components/ui/skeleton';
 
 interface ProductListProps {
   categoryId?: number;

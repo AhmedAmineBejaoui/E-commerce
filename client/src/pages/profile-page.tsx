@@ -3,15 +3,15 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useAuth } from "@/hooks/use-auth";
-import MainLayout from "@/components/layout/MainLayout";
-import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../components/ui/form";
+import { Input } from             "../components/ui/input";
+import { Button } from            "../components/ui/button";
+import { Separator } from         "../components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { useAuth } from           "../hooks/use-auth";
+import MainLayout from            "../components/layout/MainLayout";
+import { useToast } from          "../hooks/use-toast";
+import { apiRequest } from        "../lib/queryClient";
 import { Loader2 } from "lucide-react";
 
 // Schéma pour la mise à jour des informations personnelles

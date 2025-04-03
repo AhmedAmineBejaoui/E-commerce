@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Order, OrderItem, Product } from "server/src/schema";
+import { Order, OrderItem, Product } from "shared/src/schema.ts";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import { 
@@ -18,19 +18,20 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+} from "../components/ui/accordion";
+import { Button } from "../components/ui/button";
 import { 
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle
-} from "@/components/ui/dialog";
-import { Badge } from "@/components/ui/badge";
-import { useAuth } from "@/hooks/use-auth";
-import MainLayout from "@/components/layout/MainLayout";
+} from "../components/ui/dialog";
+import { Badge } from "../components/ui/badge";
+import { useAuth } from "../hooks/use-auth";
+import MainLayout from "../components/layout/MainLayout";
 
+// Type pour les commandes avec les produits associés
 // Type pour les commandes avec les produits associés
 type OrderWithItems = Order & { 
   items: (OrderItem & { product: Product })[] 

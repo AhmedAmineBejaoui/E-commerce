@@ -4,9 +4,9 @@ import {
   useMutation,
   UseMutationResult,
 } from "@tanstack/react-query";
-import { insertUserSchema, User as SelectUser, InsertUser } from "server/src/schema";
+import { insertUserSchema, User as SelectUser, InsertUser } from "shared/src/schema";
 import { getQueryFn, apiRequest, queryClient } from "../lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "../hooks/use-toast";
 
 type AuthContextType = {
   user: Omit<SelectUser, "password"> | null;

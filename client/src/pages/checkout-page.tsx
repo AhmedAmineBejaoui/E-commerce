@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { useCartContext } from "@/context/CartContext";
-import { useAuth } from "@/hooks/use-auth";
-import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
+import { useCartContext } from           "..//context/CartContext";
+import { useAuth } from                  "..//hooks/use-auth";
+import { useToast } from                 "..//hooks/use-toast";
+import { useMutation } from             "@tanstack/react-query";
 import { useLocation } from "wouter";
-import { apiRequest } from "@/lib/queryClient";
-import CheckoutForm from "@/components/checkout/CheckoutForm";
-import OrderSummary from "@/components/checkout/OrderSummary";
-import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { apiRequest } from             "../lib/queryClient";
+import CheckoutForm from               "../components/checkout/CheckoutForm";
+import OrderSummary from               "../components/checkout/OrderSummary";
+import { Card } from                   "../components/ui/card";
+import { Separator } from              "../components/ui/separator";
 import { ShoppingCart, ChevronLeft, CheckCircle } from "lucide-react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 
 export default function CheckoutPage() {
   const { cartItems, cartTotal, clearCart } = useCartContext();

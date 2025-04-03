@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useCartContext } from "@/context/CartContext";
-import { Button } from "@/components/ui/button";
+import { useCartContext } from "../../context/CartContext";
+import { Button } from "../../components/ui/button";
 import { Link } from "wouter";
 import { Loader2 } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { Input } from "../../components/ui/input";
 
 interface CartSummaryProps {
   showCheckoutButton?: boolean;

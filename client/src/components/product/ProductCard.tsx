@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'wouter';
-import { Product } from 'server/src/schema';
+import { Product } from 'shared/src/schema.ts';
 import { Heart, ShoppingCart, Star, StarHalf } from 'lucide-react';
-import { useCartContext } from '@/context/CartContext';
-import { useAuth } from '@/hooks/use-auth';
-import { useToast } from '@/hooks/use-toast';
+import { useCartContext } from '../../context/CartContext';
+import { useAuth } from '../../hooks/use-auth';
+import { useToast } from '../../hooks/use-toast';
 
 interface ProductCardProps {
   product: Product;
@@ -62,7 +62,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       >
         <div className="relative">
           <img 
-            src={product.imageUrl ?? ''} 
+            src={product.imageUrl || ""} 
             alt={product.name} 
             className="w-full h-48 object-cover"
           />

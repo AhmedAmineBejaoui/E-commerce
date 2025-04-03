@@ -1,5 +1,5 @@
 import { useParams } from "wouter";
-import ProductDetail from "@/components/product/ProductDetail";
+import ProductDetail from "../components/product/ProductDetail";
 
 export default function ProductDetailPage() {
   const { slug } = useParams();

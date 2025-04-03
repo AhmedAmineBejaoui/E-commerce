@@ -1,5 +1,5 @@
-import AdminSidebar from "@/components/admin/AdminSidebar";
-import Dashboard from "@/components/admin/Dashboard";
+import AdminSidebar from "../../components/admin/AdminSidebar";
+import Dashboard from "../../components/admin/Dashboard";
 
 export default function AdminDashboardPage() {
   return (

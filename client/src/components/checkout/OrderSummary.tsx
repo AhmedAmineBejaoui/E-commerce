@@ -1,7 +1,7 @@
-import { useCartContext } from "@/context/CartContext";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
+import { useCartContext } from "../../context/CartContext";
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card";
+import { ScrollArea } from "../../components/ui/scroll-area";
+import { Separator } from "../../components/ui/separator";
 
 export default function OrderSummary() {
   const { cartItems, cartTotal } = useCartContext();
@@ -20,7 +20,7 @@ export default function OrderSummary() {
             <div key={item.id} className="flex py-2">
               <div className="h-16 w-16 rounded-md overflow-hidden mr-4 flex-shrink-0">
                 <img
-                  src={item.product.imageUrl || ''}
+                  src={item.product.imageUrl ||""}
                   alt={item.product.name}
                   className="h-full w-full object-cover"
                 />

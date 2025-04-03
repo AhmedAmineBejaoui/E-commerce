@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import { Category } from "server/src/schema";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Category } from "shared/src/schema.ts";
+import { Skeleton } from "../../components/ui/skeleton";
 
 export default function CategoriesSection() {
   const { data: categories, isLoading } = useQuery<Category[]>({

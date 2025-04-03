@@ -5,8 +5,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
+} from "../../components/ui/card";
+import { Skeleton } from "../../components/ui/skeleton";
 import SalesChart from "./SalesChart";
 import { 
   ChevronUp, 
@@ -15,7 +15,7 @@ import {
   ShoppingBag, 
   Package 
 } from "lucide-react";
-import { Order, Product, User } from "server/src/schema";
+import { Order, Product, User } from "shared/src/schema.ts";
 
 export default function Dashboard() {
   // Fetch latest orders

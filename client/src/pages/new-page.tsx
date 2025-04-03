@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { Product } from "server/src/schema";
-import ProductList from "@/components/product/ProductList";
-import MainLayout from "@/components/layout/MainLayout";
+import { Product } from "shared/src/schema.ts";
+import ProductList from "../components/product/ProductList";
+import MainLayout from "../components/layout/MainLayout";
 import { Loader2 } from "lucide-react";
 
 export default function NewProductsPage() {
