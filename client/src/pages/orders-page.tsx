@@ -104,20 +104,20 @@ export default function OrdersPage() {
   // Si l'utilisateur n'est pas connecté ou en cours de chargement
   if (isLoading) {
     return (
-      <MainLayout>
+      
         <div className="container mx-auto px-4 py-12">
           <div className="flex justify-center items-center h-64">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
           </div>
         </div>
-      </MainLayout>
+      
     );
   }
 
   // En cas d'erreur
   if (error) {
     return (
-      <MainLayout>
+    
         <div className="container mx-auto px-4 py-12">
           <div className="bg-red-50 p-6 rounded-lg max-w-xl mx-auto">
             <h1 className="text-2xl font-bold text-red-700 mb-2">Erreur</h1>
@@ -126,12 +126,12 @@ export default function OrdersPage() {
             </p>
           </div>
         </div>
-      </MainLayout>
+      
     );
   }
 
   return (
-    <MainLayout>
+    
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Mes Commandes</h1>
         
@@ -155,7 +155,7 @@ export default function OrdersPage() {
                   <div key={order.id} className="flex items-center px-6 py-4 border-b hover:bg-gray-50 transition-colors">
                     <div className="w-1/6 font-medium">{order.id}</div>
                     <div className="w-1/6 text-gray-600">{formatDate(order.createdAt)}</div>
-                    <div className="w-1/6 font-medium">{order.totalAmount.toFixed(2)} €</div>
+                    <div className="w-1/6 font-medium">{order.totalAmount.toFixed(2)} TND</div>
                     <div className="w-1/6 text-gray-600">{order.items.length} article(s)</div>
                     <div className="w-1/6">
                       <Badge variant="outline" className={`${statusInfo.color} font-medium flex items-center gap-1 whitespace-nowrap`}>
@@ -198,7 +198,7 @@ export default function OrdersPage() {
                         <div className="px-4 pb-4 space-y-3">
                           <div className="flex justify-between">
                             <span className="text-gray-600">Total:</span>
-                            <span className="font-medium">{order.totalAmount.toFixed(2)} €</span>
+                            <span className="font-medium">{order.totalAmount.toFixed(2)} TND</span>
                           </div>
                           <div className="flex justify-between">
                             <span className="text-gray-600">Articles:</span>
@@ -259,7 +259,7 @@ export default function OrdersPage() {
                   </div>
                   <div className="text-right">
                     <h3 className="font-medium text-gray-800">Total</h3>
-                    <p className="text-lg font-bold text-primary">{selectedOrder.totalAmount.toFixed(2)} €</p>
+                    <p className="text-lg font-bold text-primary">{selectedOrder.totalAmount.toFixed(2)} TND</p>
                   </div>
                 </div>
                 
@@ -301,9 +301,9 @@ export default function OrdersPage() {
                                 <p className="text-sm text-gray-500 line-clamp-1">{item.product.description?.substring(0, 30)}</p>
                               </div>
                             </div>
-                            <div className="col-span-2 text-center">{item.unitPrice.toFixed(2)} €</div>
+                            <div className="col-span-2 text-center">{item.unitPrice.toFixed(2)} TND</div>
                             <div className="col-span-2 text-center">{item.quantity}</div>
-                            <div className="col-span-2 font-medium text-right">{(item.unitPrice * item.quantity).toFixed(2)} €</div>
+                            <div className="col-span-2 font-medium text-right">{(item.unitPrice * item.quantity).toFixed(2)} TND</div>
                           </div>
                         </div>
                       ))}
@@ -314,7 +314,7 @@ export default function OrdersPage() {
                         <div className="w-1/3">
                           <div className="flex justify-between py-1">
                             <span className="text-gray-600">Sous-total:</span>
-                            <span>{selectedOrder.totalAmount.toFixed(2)} €</span>
+                            <span>{selectedOrder.totalAmount.toFixed(2)} TND</span>
                           </div>
                           <div className="flex justify-between py-1">
                             <span className="text-gray-600">Livraison:</span>
@@ -322,7 +322,7 @@ export default function OrdersPage() {
                           </div>
                           <div className="flex justify-between py-1 font-bold">
                             <span>Total:</span>
-                            <span className="text-primary">{selectedOrder.totalAmount.toFixed(2)} €</span>
+                            <span className="text-primary">{selectedOrder.totalAmount.toFixed(2)} TND</span>
                           </div>
                         </div>
                       </div>
@@ -334,6 +334,6 @@ export default function OrdersPage() {
           </Dialog>
         )}
       </div>
-    </MainLayout>
+  
   );
 }

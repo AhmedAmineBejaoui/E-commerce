@@ -113,7 +113,7 @@ export default function Dashboard() {
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalSales.toFixed(2)} €</div>
+            <div className="text-2xl font-bold">{totalSales.toFixed(2)} TND</div>
             <p className="text-xs text-muted-foreground flex items-center mt-1">
               <span className={`flex items-center ${salesChange >= 0 ? 'text-green-500' : 'text-red-500'}`}>
                 {salesChange >= 0 ? <ChevronUp className="h-3 w-3 mr-1" /> : <ChevronUp className="h-3 w-3 mr-1 transform rotate-180" />}
@@ -209,7 +209,7 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <span className="font-medium mr-4">{order.totalAmount.toFixed(2)} €</span>
+                    <span className="font-medium mr-4">{order.totalAmount.toFixed(2)} TND</span>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                       order.status === 'completed' ? 'bg-green-100 text-green-800' :
                       order.status === 'processing' ? 'bg-blue-100 text-blue-800' :
@@ -259,7 +259,7 @@ export default function Dashboard() {
                       <span className="text-gray-500 ml-1">({product.numReviews})</span>
                     </div>
                     <div className="flex justify-between items-center mt-1">
-                      <span className="text-sm font-medium">{product.price.toFixed(2)} €</span>
+                      <span className="text-sm font-medium">{product.price.toFixed(2)} TND</span>
                       <span className="text-xs text-green-600">En stock: {product.stock}</span>
                     </div>
                   </div>

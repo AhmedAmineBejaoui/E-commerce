@@ -55,30 +55,30 @@ export default function CartSummary({ showCheckoutButton = true }: CartSummaryPr
       <div className="space-y-3 mb-6">
         <div className="flex justify-between text-gray-600">
           <span>Sous-total ({totalQuantity} article{totalQuantity > 1 ? 's' : ''})</span>
-          <span>{cartTotal.toFixed(2)} €</span>
+          <span>{cartTotal.toFixed(2)} TND</span>
         </div>
         
         {promoApplied && (
           <div className="flex justify-between text-green-600">
             <span>Réduction (SOUND15)</span>
-            <span>-{discount.toFixed(2)} €</span>
+            <span>-{discount.toFixed(2)} TND</span>
           </div>
         )}
         
         <div className="flex justify-between text-gray-600">
           <span>Frais de livraison</span>
-          <span>{shippingFee === 0 ? "Gratuit" : `${shippingFee.toFixed(2)} €`}</span>
+          <span>{shippingFee === 0 ? "Gratuit" : `${shippingFee.toFixed(2)} TND`}</span>
         </div>
         
         {finalAmount < freeShippingThreshold && (
           <div className="text-sm text-orange-500">
-            Ajoutez {(freeShippingThreshold - finalAmount).toFixed(2)} € d'articles pour bénéficier de la livraison gratuite !
+            Ajoutez {(freeShippingThreshold - finalAmount).toFixed(2)} TND d'articles pour bénéficier de la livraison gratuite !
           </div>
         )}
         
         <div className="pt-3 border-t border-gray-200 flex justify-between font-bold text-lg">
           <span>Total</span>
-          <span>{(finalAmount + shippingFee).toFixed(2)} €</span>
+          <span>{(finalAmount + shippingFee).toFixed(2)} TND</span>
         </div>
       </div>
       

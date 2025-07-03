@@ -140,9 +140,9 @@ function OrderDetailsDialog({ order, isOpen, onClose, onUpdateStatus }: OrderDet
                         {item.product.name}
                       </div>
                     </TableCell>
-                    <TableCell className="text-right">{item.unitPrice.toFixed(2)} €</TableCell>
+                    <TableCell className="text-right">{item.unitPrice.toFixed(2)} TND</TableCell>
                     <TableCell className="text-right">{item.quantity}</TableCell>
-                    <TableCell className="text-right">{(item.unitPrice * item.quantity).toFixed(2)} €</TableCell>
+                    <TableCell className="text-right">{(item.unitPrice * item.quantity).toFixed(2)} TND</TableCell>
                   </TableRow>
                 ))}
                 <TableRow>
@@ -150,7 +150,7 @@ function OrderDetailsDialog({ order, isOpen, onClose, onUpdateStatus }: OrderDet
                     Total
                   </TableCell>
                   <TableCell className="text-right font-bold">
-                    {order.totalAmount.toFixed(2)} €
+                    {order.totalAmount.toFixed(2)} TND
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -409,7 +409,7 @@ export default function OrdersList() {
                     <TableCell>
                       {format(new Date(order.createdAt), 'dd MMM yyyy', { locale: fr })}
                     </TableCell>
-                    <TableCell>{order.totalAmount.toFixed(2)} €</TableCell>
+                    <TableCell>{order.totalAmount.toFixed(2)} TND</TableCell>
                     <TableCell>
                       <Badge variant={
                         order.status === "delivered" ? "secondary" :

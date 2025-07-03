@@ -53,7 +53,7 @@ export default function ContactPage() {
   };
 
   return (
-    <MainLayout>
+    
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Contactez-nous</h1>
@@ -74,8 +74,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium text-gray-800">Email</h3>
-                  <p className="text-gray-600">support@phonegear.com</p>
-                  <p className="text-gray-600">contact@phonegear.com</p>
+                  <p className="text-gray-600">tjinitawservice@gmail.com</p>
                 </div>
               </div>
               
@@ -85,8 +84,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium text-gray-800">Téléphone</h3>
-                  <p className="text-gray-600">+33 1 23 45 67 89</p>
-                  <p className="text-gray-600">Du lundi au vendredi, 9h-18h</p>
+                  <p className="text-gray-600">+216 58 600 068</p>
+                  <p className="text-gray-600">+216 25 002 561</p>
+                  <p className="text-gray-600">Du Lundi au Samedi, 8h-18h</p>
                 </div>
               </div>
               
@@ -106,12 +106,8 @@ export default function ContactPage() {
               <h3 className="text-lg font-medium text-gray-800 mb-2">Heures d'ouverture</h3>
               <div className="space-y-1 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Lundi - Vendredi</span>
-                  <span className="font-medium">9h - 18h</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Samedi</span>
-                  <span className="font-medium">10h - 16h</span>
+                  <span className="text-gray-600">Lundi - Samedi</span>
+                  <span className="font-medium">8h - 18h</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Dimanche</span>
@@ -225,6 +221,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </MainLayout>
+  
   );
 }

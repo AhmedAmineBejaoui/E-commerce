@@ -5,8 +5,6 @@ import path, { dirname } from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { fileURLToPath } from "url";
 
-
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -36,4 +34,17 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "../server/public"),
     emptyOutDir: true,
   },
+  server: {
+    port: 3000, // Client sur port 3000
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001', // Proxy vers Express
+        changeOrigin: true,
+        secure: false
+      }
+    }
+  },
+  preview: {
+    port: 3000 // Port pour la prévisualisation de production
+  }
 });

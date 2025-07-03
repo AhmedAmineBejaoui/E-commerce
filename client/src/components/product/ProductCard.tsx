@@ -114,11 +114,11 @@ export default function ProductCard({ product }: ProductCardProps) {
             <div>
               {product.discountPrice ? (
                 <>
-                  <span className="font-bold text-primary">{product.discountPrice.toFixed(2)} €</span>
-                  <span className="text-gray-400 text-sm line-through ml-1">{product.price.toFixed(2)} €</span>
+                  <span className="font-bold text-primary">{product.discountPrice.toFixed(2)} TND</span>
+                  <span className="text-gray-400 text-sm line-through ml-1">{product.price.toFixed(2)} TND</span>
                 </>
               ) : (
-                <span className="font-bold text-primary">{product.price.toFixed(2)} €</span>
+                <span className="font-bold text-primary">{product.price.toFixed(2)} TND</span>
               )}
             </div>
             <button 

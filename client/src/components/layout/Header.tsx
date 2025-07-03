@@ -95,7 +95,7 @@ export default function Header() {
                             <p className="text-gray-500 text-xs">{item.product.description?.substring(0, 20)}...</p>
                             <div className="flex justify-between items-center mt-1">
                               <span className="font-medium text-primary">
-                                {(item.product.discountPrice || item.product.price).toFixed(2)} €
+                                {(item.product.discountPrice || item.product.price).toFixed(2)} TND
                               </span>
                               <div className="flex items-center space-x-2">
                                 <button 
@@ -128,7 +128,7 @@ export default function Header() {
                   <div className="p-4 border-t border-gray-100">
                     <div className="flex justify-between mb-2">
                       <span className="text-gray-600">Sous-total</span>
-                      <span className="font-medium">{cartTotal.toFixed(2)} €</span>
+                      <span className="font-medium">{cartTotal.toFixed(2)} TND</span>
                     </div>
                     <Link href="/cart" className="block w-full bg-primary text-white text-center py-2 rounded-lg hover:bg-primary/90 transition">
                       Voir le panier
@@ -201,9 +201,7 @@ export default function Header() {
               </Link>
             </li>
             <li className="group relative">
-              <a href="#" className="text-gray-600 hover:text-primary flex items-center">
-                Catégories <ChevronDown className="ml-1 h-4 w-4" />
-              </a>
+              
               {categories && categories.length > 0 && (
                 <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
                   <div className="py-1" role="menu" aria-orientation="vertical">

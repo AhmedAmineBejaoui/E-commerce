@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { useAuth } from "../../hooks/use-auth";
-import { 
-  LayoutDashboard, 
-  Package, 
-  ShoppingCart, 
-  Users, 
-  Settings, 
+import {
+  LayoutDashboard,
+  Package,
+  ShoppingCart,
+  Users,
+  Settings,
   LogOut,
   ChevronDown,
   Menu,
-  X
+  X,
 } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import {  Tags, Percent } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { ScrollArea } from "../../components/ui/scroll-area";
 
@@ -25,12 +27,43 @@ export default function AdminSidebar() {
   };
 
   const links = [
-    { href: "/admin/dashboard", label: "Tableau de bord", icon: <LayoutDashboard className="h-5 w-5" /> },
-    { href: "/admin/products", label: "Produits", icon: <Package className="h-5 w-5" /> },
-    { href: "/admin/orders", label: "Commandes", icon: <ShoppingCart className="h-5 w-5" /> },
-    { href: "/admin/customers", label: "Clients", icon: <Users className="h-5 w-5" /> },
-    { href: "/admin/settings", label: "Paramètres", icon: <Settings className="h-5 w-5" /> },
+    {
+      href: "/admin/dashboard",
+      label: "Tableau de bord",
+      icon: <LayoutDashboard className="h-5 w-5" />,
+    },
+    {
+      href: "/admin/products",
+      label: "Produits",
+      icon: <Package className="h-5 w-5" />,
+    },
+    {
+      href: "/admin/orders",
+      label: "Commandes",
+      icon: <ShoppingCart className="h-5 w-5" />,
+    },
+    {
+      href: "/admin/customers",
+      label: "Clients",
+      icon: <Users className="h-5 w-5" />,
+    },
+    {
+      href: "/admin/settings",
+      label: "Paramètres",
+      icon: <Settings className="h-5 w-5" />,
+    },
+    {
+      href: "/admin/categories",
+      label: "Catégories",
+      icon: <Tags className="h-5 w-5" />,
+    },
+    {
+      href: "/admin/reductions",
+      label: "Réductions",
+      icon: <Percent className="h-5 w-5" />,
+    },
   ];
+  
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -43,7 +76,9 @@ export default function AdminSidebar() {
         <Link href="/admin/dashboard">
           <a className="flex items-center">
             <span className="text-xl font-bold text-white">PhoneGear</span>
-            <span className="ml-2 text-xs bg-blue-600 text-white px-2 py-0.5 rounded">Admin</span>
+            <span className="ml-2 text-xs bg-blue-600 text-white px-2 py-0.5 rounded">
+              Admin
+            </span>
           </a>
         </Link>
       </div>
@@ -74,24 +109,40 @@ export default function AdminSidebar() {
           </div>
 
           <div className="space-y-1">
-            <button
-              className="w-full flex items-center justify-between px-3 py-2 rounded-md text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
+            <button className="w-full flex items-center justify-between px-3 py-2 rounded-md text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
               <div className="flex items-center">
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
                 </svg>
                 <span className="ml-3">Catégories</span>
               </div>
               <ChevronDown className="h-4 w-4" />
             </button>
 
-            <button
-              className="w-full flex items-center justify-between px-3 py-2 rounded-md text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
+            <button className="w-full flex items-center justify-between px-3 py-2 rounded-md text-sm text-gray-300 hover:bg-gray-700 hover:text-white">
               <div className="flex items-center">
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                  />
                 </svg>
                 <span className="ml-3">Réductions</span>
               </div>
@@ -136,7 +187,11 @@ export default function AdminSidebar() {
           className="bg-gray-900 border-gray-700 text-white"
           onClick={toggleMobileMenu}
         >
-          {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isMobileMenuOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
         </Button>
       </div>
 

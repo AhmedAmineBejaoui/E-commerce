@@ -3,7 +3,7 @@ import { CheckCircle, Award, Package, ShieldCheck, Truck, Users } from "lucide-r
 
 export default function AboutPage() {
   return (
-    <MainLayout>
+    
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">À propos de PhoneGear</h1>
@@ -17,7 +17,7 @@ export default function AboutPage() {
           <div className="md:flex">
             <div className="md:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                src="../images/img1.png" 
                 alt="Notre magasin" 
                 className="h-full w-full object-cover"
               />
@@ -106,7 +106,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">Livraison Rapide</h3>
-                <p className="text-gray-600">Expédition sous 24h et livraison en 2-3 jours ouvrés dans toute la France.</p>
+                <p className="text-gray-600">Expédition sous 24h et livraison en 2-3 jours ouvrés dans toute la Tunisie.</p>
               </div>
             </div>
             
@@ -142,61 +142,8 @@ export default function AboutPage() {
           </div>
         </div>
         
-        {/* Section Équipe */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">Notre Équipe</h2>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-              <img 
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-                alt="Alex Martin - Fondateur" 
-                className="w-full h-64 object-cover object-center"
-              />
-              <div className="p-4 text-center">
-                <h3 className="text-lg font-semibold text-gray-800">Alex Martin</h3>
-                <p className="text-primary font-medium">Fondateur & CEO</p>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-              <img 
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-                alt="Sophie Dubois - Directrice Marketing" 
-                className="w-full h-64 object-cover object-center"
-              />
-              <div className="p-4 text-center">
-                <h3 className="text-lg font-semibold text-gray-800">Sophie Dubois</h3>
-                <p className="text-primary font-medium">Directrice Marketing</p>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-                alt="Thomas Lefèvre - Responsable Technique" 
-                className="w-full h-64 object-cover object-center"
-              />
-              <div className="p-4 text-center">
-                <h3 className="text-lg font-semibold text-gray-800">Thomas Lefèvre</h3>
-                <p className="text-primary font-medium">Responsable Technique</p>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-              <img 
-                src="https://images.unsplash.com/photo-1573497019236-61f323342eb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-                alt="Julie Moreau - Service Client" 
-                className="w-full h-64 object-cover object-center"
-              />
-              <div className="p-4 text-center">
-                <h3 className="text-lg font-semibold text-gray-800">Julie Moreau</h3>
-                <p className="text-primary font-medium">Responsable Service Client</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </div>
-    </MainLayout>
+    
   );
 }

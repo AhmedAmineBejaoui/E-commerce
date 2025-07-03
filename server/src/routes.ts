@@ -4,13 +4,15 @@ import { storage } from "./storage";
 import { setupAuth } from "./auth";
 import { insertProductSchema, insertCategorySchema, insertOrderSchema, insertCartItemSchema } from "shared/src/schema";
 import { z } from "zod";
+import React, { lazy } from 'react';
+import { createBrowserRouter } from 'react-router-dom';
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Set up authentication routes
   setupAuth(app);
 
   // Category routes
-  app.get("/api/categories", async (req, res) => {
+  app.get("/api/categories", async (_, res) => {
     try {
       const categories = await storage.getCategories();
       res.json(categories);
@@ -31,31 +33,38 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Product routes
-  app.get("/api/products", async (req, res) => {
+// Product routes
+app.get("/api/products", async (req, res) => {
     try {
       let products;
+
       if (req.query.category) {
         const category = await storage.getCategoryBySlug(req.query.category as string);
         if (!category) {
           return res.status(404).json({ message: "Catégorie non trouvée" });
         }
         products = await storage.getProductsByCategory(category.id);
-      } else if (req.query.featured === "true") {
+      } 
+      else if (req.query.featured === "true") {
         products = await storage.getFeaturedProducts();
-      } else if (req.query.new === "true") {
+      } 
+      else if (req.query.new === "true") {
         products = await storage.getNewProducts();
-      } else {
+      } 
+      else {
         products = await storage.getProducts();
       }
+
       res.json(products);
     } catch (err) {
+      console.error(err);
       res.status(500).json({ message: "Erreur lors de la récupération des produits" });
     }
   });
+
   
   // Route spécifique pour nouveautés
-  app.get("/api/products/new", async (req, res) => {
+  app.get("/api/products/new", async (_, res) => {
     try {
       const newProducts = await storage.getNewProducts();
       res.json(newProducts);
@@ -65,7 +74,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
   // Route spécifique pour produits en promotion
-  app.get("/api/products/promo", async (req, res) => {
+  app.get("/api/products/promo", async (_, res) => {
     try {
       const products = await storage.getProducts();
       const promoProducts = products.filter(product => product.discountPrice !== null);
@@ -185,6 +194,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ message: "Erreur lors de la suppression du panier" });
     }
   });
+
+  
 
   // Order routes
   app.get("/api/orders/user", async (req, res) => {

@@ -29,12 +29,12 @@ export default function OrderSummary() {
                 <div className="flex justify-between">
                   <h3 className="font-medium text-sm">{item.product.name}</h3>
                   <span className="text-sm font-medium">
-                    {((item.product.discountPrice || item.product.price) * item.quantity).toFixed(2)} €
+                    {((item.product.discountPrice || item.product.price) * item.quantity).toFixed(2)} TND
                   </span>
                 </div>
                 <div className="flex justify-between text-gray-500 text-xs mt-1">
                   <span>
-                    {(item.product.discountPrice || item.product.price).toFixed(2)} € × {item.quantity}
+                    {(item.product.discountPrice || item.product.price).toFixed(2)} TND × {item.quantity}
                   </span>
                 </div>
               </div>
@@ -47,16 +47,16 @@ export default function OrderSummary() {
         <div className="space-y-1.5">
           <div className="flex justify-between text-sm">
             <span>Sous-total</span>
-            <span>{cartTotal.toFixed(2)} €</span>
+            <span>{cartTotal.toFixed(2)} TND</span>
           </div>
           <div className="flex justify-between text-sm">
             <span>Frais de livraison</span>
-            <span>{shippingFee === 0 ? "Gratuit" : `${shippingFee.toFixed(2)} €`}</span>
+            <span>{shippingFee === 0 ? "Gratuit" : `${shippingFee.toFixed(2)} TND`}</span>
           </div>
           <Separator className="my-2" />
           <div className="flex justify-between font-medium">
             <span>Total</span>
-            <span>{totalAmount.toFixed(2)} €</span>
+            <span>{totalAmount.toFixed(2)} TND</span>
           </div>
         </div>
         

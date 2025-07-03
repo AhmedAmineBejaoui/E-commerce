@@ -11,7 +11,7 @@ export default function NewProductsPage() {
   });
 
   return (
-    <MainLayout>
+    
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Nouveautés</h1>
@@ -28,6 +28,6 @@ export default function NewProductsPage() {
           <ProductList newArrivals={true} limit={12} />
         )}
       </div>
-    </MainLayout>
+    
   );
 }

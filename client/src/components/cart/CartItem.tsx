@@ -63,11 +63,11 @@ export default function CartItem({ item }: CartItemProps) {
         
         <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600">
           <span className="inline-flex items-center">
-            Prix unitaire: <span className="font-medium text-primary ml-1">{price.toFixed(2)} €</span>
+            Prix unitaire: <span className="font-medium text-primary ml-1">{price.toFixed(2)} TND</span>
           </span>
           {product.discountPrice && (
             <span className="inline-flex items-center text-gray-400 line-through">
-              {product.price.toFixed(2)} €
+              {product.price.toFixed(2)} TND
             </span>
           )}
           
@@ -105,7 +105,7 @@ export default function CartItem({ item }: CartItemProps) {
         
         <div className="flex flex-col items-end">
           <span className="font-medium text-primary">
-            {subtotal.toFixed(2)} €
+            {subtotal.toFixed(2)} TND
           </span>
           <Button 
             variant="ghost" 

@@ -105,10 +105,10 @@ export default function NewArrivals() {
                     <span className="font-bold text-primary">
                       {product.discountPrice ? (
                         <>
-                          {product.discountPrice.toFixed(2)} € <span className="text-gray-400 text-sm line-through ml-1">{product.price.toFixed(2)} €</span>
+                          {product.discountPrice.toFixed(2)} TND <span className="text-gray-400 text-sm line-through ml-1">{product.price.toFixed(2)} TND</span>
                         </>
                       ) : (
-                        `${product.price.toFixed(2)} €`
+                        `${product.price.toFixed(2)} TND`
                       )}
                     </span>
                     <Link href={`/product/${product.slug}`}>

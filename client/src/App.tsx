@@ -15,10 +15,14 @@ import OrdersPage from                  "./pages/orders-page";
 import AdminDashboard from              "./pages/admin/admin-dashboard";
 import AdminProducts from               "./pages/admin/admin-products";
 import AdminOrders from                 "./pages/admin/admin-orders";
+import AdminSettingsPage from            "./pages/admin/admin-settings";
 import { ProtectedRoute } from "./lib/protected-route";
 import MainLayout from "./components/layout/MainLayout";
 import { CartProvider } from "./context/CartContext";
 import { AuthProvider } from "./hooks/use-auth";
+import AdminClientsPage from "./pages/admin/admin-clients";
+import CategoriesPage from "./pages/admin/categories";
+import DiscountsPage from "./pages/admin/discounts";
 
 function Router() {
   return (
@@ -37,6 +41,10 @@ function Router() {
       <ProtectedRoute path="/admin/dashboard" component={AdminDashboard} adminOnly={true} />
       <ProtectedRoute path="/admin/products" component={AdminProducts} adminOnly={true} />
       <ProtectedRoute path="/admin/orders" component={AdminOrders} adminOnly={true} />
+      <ProtectedRoute path="/admin/customers" component={AdminClientsPage} adminOnly={true} />
+      <Route path="/admin/settings" component={AdminSettingsPage} />
+      <Route path="/admin/categories" component={CategoriesPage} />
+      <Route path="/admin/discounts" component={DiscountsPage} />
       <Route component={NotFound} />
     </Switch>
   );

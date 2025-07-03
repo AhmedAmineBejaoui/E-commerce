@@ -112,7 +112,7 @@ export default function SalesChart() {
                 axisLine={false}
                 tickLine={false}
                 tick={{ fontSize: 12 }}
-                tickFormatter={(value) => `${value}€`}
+                tickFormatter={(value) => `${value}TND`}
               />
               <YAxis 
                 yAxisId="right"
@@ -124,7 +124,7 @@ export default function SalesChart() {
               />
               <Tooltip 
                 formatter={(value, name) => {
-                  if (name === "sales") return [`${value} €`, "Ventes"];
+                  if (name === "sales") return [`${value} TND`, "Ventes"];
                   if (name === "orders") return [value, "Commandes"];
                   return [value, name];
                 }}

@@ -258,13 +258,13 @@ export default function ProductsList() {
                     <TableCell>
                       {product.discountPrice ? (
                         <div>
-                          <span className="font-medium">{product.discountPrice.toFixed(2)} €</span>
+                          <span className="font-medium">{product.discountPrice.toFixed(2)} TND</span>
                           <span className="text-sm text-gray-500 line-through ml-1">
-                            {product.price.toFixed(2)} €
+                            {product.price.toFixed(2)} TND
                           </span>
                         </div>
                       ) : (
-                        <span>{product.price.toFixed(2)} €</span>
+                        <span>{product.price.toFixed(2)} TND</span>
                       )}
                     </TableCell>
                     <TableCell>

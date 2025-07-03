@@ -176,14 +176,14 @@ export default function ProductDetail({ slug }: ProductDetailProps) {
           <div className="mb-4">
             {product.discountPrice ? (
               <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-primary">{product.discountPrice.toFixed(2)} €</span>
-                <span className="text-gray-500 line-through">{product.price.toFixed(2)} €</span>
+                <span className="text-2xl font-bold text-primary">{product.discountPrice.toFixed(2)} TND</span>
+                <span className="text-gray-500 line-through">{product.price.toFixed(2)} TND</span>
                 <span className="bg-orange-500 text-white text-xs py-1 px-2 rounded-full">
                   -{Math.round(((product.price - product.discountPrice) / product.price) * 100)}%
                 </span>
               </div>
             ) : (
-              <span className="text-2xl font-bold text-primary">{product.price.toFixed(2)} €</span>
+              <span className="text-2xl font-bold text-primary">{product.price.toFixed(2)} TND</span>
             )}
           </div>
 
@@ -260,7 +260,7 @@ export default function ProductDetail({ slug }: ProductDetailProps) {
           <div className="border-t border-gray-200 pt-4 space-y-3">
             <div className="flex items-center text-gray-600">
               <Truck className="h-5 w-5 mr-2 text-primary" />
-              <span>Livraison gratuite pour les commandes de plus de 50€</span>
+              <span>Livraison gratuite pour les commandes de plus de 50TND</span>
             </div>
             <div className="flex items-center text-gray-600">
               <DollarSign className="h-5 w-5 mr-2 text-primary" />
@@ -423,11 +423,11 @@ export default function ProductDetail({ slug }: ProductDetailProps) {
                         <div>
                           {relatedProduct.discountPrice ? (
                             <>
-                              <span className="font-bold text-primary">{relatedProduct.discountPrice.toFixed(2)} €</span>
-                              <span className="text-gray-400 text-sm line-through ml-1">{relatedProduct.price.toFixed(2)} €</span>
+                              <span className="font-bold text-primary">{relatedProduct.discountPrice.toFixed(2)} TND</span>
+                              <span className="text-gray-400 text-sm line-through ml-1">{relatedProduct.price.toFixed(2)} TND</span>
                             </>
                           ) : (
-                            <span className="font-bold text-primary">{relatedProduct.price.toFixed(2)} €</span>
+                            <span className="font-bold text-primary">{relatedProduct.price.toFixed(2)} TND</span>
                           )}
                         </div>
                       </div>

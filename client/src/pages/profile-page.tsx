@@ -157,7 +157,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <MainLayout>
+    
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl font-bold text-gray-900 mb-6">Mon Profil</h1>
@@ -417,6 +417,6 @@ export default function ProfilePage() {
           </div>
         </div>
       </div>
-    </MainLayout>
+    
   );
 }

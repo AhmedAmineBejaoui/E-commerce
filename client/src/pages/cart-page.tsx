@@ -96,7 +96,7 @@ export default function CartPage() {
                         />
                         <div className="p-2">
                           <h3 className="font-medium text-sm">Produit Suggéré {i}</h3>
-                          <p className="text-primary text-sm font-bold">19.99 €</p>
+                          <p className="text-primary text-sm font-bold">19.99 TND</p>
                         </div>
                       </a>
                     </Link>

@@ -150,6 +150,18 @@ import {
       return updatedUser;
     }
     
+    async createDiscount(discountData: any): Promise<any> {
+      // Implement the logic to create a discount in the database
+      // Example:
+      const newDiscount = {
+        id: Date.now(), // Replace with actual ID generation logic
+        ...discountData,
+      };
+      // Simulate saving to the database
+      console.log("Discount created:", newDiscount);
+      return newDiscount;
+    }
+
     // Category management
     async getCategories(): Promise<Category[]> {
       return Array.from(this.categories.values());

@@ -11,7 +11,6 @@ export default function PromotionsPage() {
   });
 
   return (
-    <MainLayout>
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Promotions</h1>
@@ -55,11 +54,11 @@ export default function PromotionsPage() {
                       <div className="flex items-center">
                         {product.discountPrice ? (
                           <>
-                            <span className="text-lg font-bold text-primary">{product.discountPrice.toFixed(2)} €</span>
-                            <span className="text-sm text-gray-500 line-through ml-2">{product.price.toFixed(2)} €</span>
+                            <span className="text-lg font-bold text-primary">{product.discountPrice.toFixed(2)} TND</span>
+                            <span className="text-sm text-gray-500 line-through ml-2">{product.price.toFixed(2)} TND</span>
                           </>
                         ) : (
-                          <span className="text-lg font-bold text-primary">{product.price.toFixed(2)} €</span>
+                          <span className="text-lg font-bold text-primary">{product.price.toFixed(2)} TND</span>
                         )}
                       </div>
                       
@@ -82,6 +81,6 @@ export default function PromotionsPage() {
           </div>
         )}
       </div>
-    </MainLayout>
+    
   );
 }

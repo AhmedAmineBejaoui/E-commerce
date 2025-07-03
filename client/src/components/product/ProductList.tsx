@@ -11,15 +11,24 @@ interface ProductListProps {
 }
 
 export default function ProductList({ categoryId, featured, newArrivals, limit }: ProductListProps) {
-  let queryUrl = '/api/products';
-  if (categoryId) queryUrl += `?category=${categoryId}`;
-  else if (featured) queryUrl += '?featured=true';
-  else if (newArrivals) queryUrl += '?new=true';
+  const queryParams = new URLSearchParams();
+  
+  if (categoryId) queryParams.append('category', categoryId.toString());
+  if (featured) queryParams.append('featured', 'true');
+  if (newArrivals) queryParams.append('new', 'true');
+
+  const queryUrl = `/api/products?${queryParams.toString()}`;
 
   const { data: products, isLoading, error } = useQuery<Product[]>({
-    queryKey: [queryUrl],
+    queryKey: ['products', categoryId, featured, newArrivals],
+    queryFn: async () => {
+      const res = await fetch(queryUrl);
+      if (!res.ok) throw new Error("Erreur lors de la récupération des produits");
+      return res.json();
+    },
     staleTime: 60000,
   });
+
 
   if (isLoading) {
     return (
